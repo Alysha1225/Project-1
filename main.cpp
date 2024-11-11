@@ -12,6 +12,7 @@
 #include <queue>
 #include <algorithm>
 #include <iterator>
+#include <string>
 
 
 using namespace std;
@@ -25,22 +26,21 @@ void opponentShipsPlaced(map<pair<char,int>,char> &m);
 void yourShipsPlaced(map<pair<char,int>,char> &m);
 bool placeYourShip(map<pair<char,int>,char> &m, int num, char shipType, int shipDirection, char x, int y);
 int randomm(int min, int max);
+void enterToCont();
 
 int main(int argc, char** argv) {
     
     srand(time(0));
     
     
-    cout << "Welcome to battleship n all that stuff" << endl;
-    // make a press enter to continue button or whatever
-    cout << "rules" << endl;
-    //split like each rule with click enter to cont
-    
-    
+    cout << "Welcome to battleship." << endl;
+    void enterToCont();
+    cout << "Rules" << endl;
+    cout << "Players will place 5 ships or varying sizes on the board and take turns picking points to try eliminating their opponent's ships." << endl;
+    cout << "The first player to eliminate all their opponent's ships wins." << endl;
+    void enterToCont();
     
     const int BOARD_SIZE = 10;
-    
-
     
     //creating the boards
     map <pair<char, int>, char> yourBoard;
@@ -160,7 +160,7 @@ void yourShipsPlaced(map<pair<char,int>,char> &m)
     char x;
     int y;
     
-    cout << "You will now place your ships or smth" << endl;
+    cout << "You will now place your ships" << endl;
     cout << "If you try to place a ship in a taken spot, you will be asked to place your ship again" << endl;
     
     cout << "You have placed no ships yet" << endl;
@@ -457,4 +457,10 @@ bool placeYourShip(map<pair<char,int>,char> &m, int num, char shipType, int ship
 int randomm(int min, int max)
 {
     return rand() % (max - min + 1) + min;
+}
+void enterToCont()
+{
+    string enter;
+    cout << "Press enter to continue";
+    cin >> enter;
 }
